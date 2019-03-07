@@ -4,6 +4,8 @@ const Users = require('./users-model.js');
 
 const restricted = require('../cred/restricted-middleware.js');
 
+//***********all users in database if user is logged in*************/
+
 router.get('/', restricted,  (req, res) => {
     Users.find()
       .then(users => {

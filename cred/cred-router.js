@@ -21,6 +21,8 @@ router.post('/register', (req, res) => {
       });
 });
 
+//***********login user*************/
+
 router.post('/login', (req, res) => {
     let { username, password } = req.body;
   
@@ -29,8 +31,6 @@ router.post('/login', (req, res) => {
       .then(user => {
         if (user && bcrypt.compareSync(password, user.password)) {
           const token = generateToken(user); 
-  
-         
           res.status(200).json({
             message: `Welcome ${user.username}!, have a token...`,
             token, 
@@ -48,14 +48,12 @@ router.post('/login', (req, res) => {
     const payload = {
       subject: user.id,
       username: user.username,
-    };
-  
-    const options = {
+      };
+      const options = {
       expiresIn: '1d',
     };
-  
     return jwt.sign(payload, secrets.jwtSecret, options);
-  }
+};
   
 
 
