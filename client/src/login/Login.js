@@ -4,7 +4,7 @@ import axios from 'axios';
 class Login extends React.Component {
     state = {
       username: '',
-      password: 'pass',
+      password: '',
     };
 
     render() {
@@ -30,6 +30,7 @@ class Login extends React.Component {
                   id="password"
                   value={this.state.password}
                   onChange={this.handleInputChange}
+                  placeholder="password"
                   type="password"
                 />
               </div>
