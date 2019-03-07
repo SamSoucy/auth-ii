@@ -66,14 +66,14 @@ handleInputChange = event => {
   handleSubmit = event => {
     event.preventDefault();
 
-    const endpoint = 'http://localhost:5000/api/auth/register';
+    const endpoint = 'http://localhost:5000/api/cred/register';
 
     axios
       .post(endpoint, this.state)
       .then(res => {
         localStorage.setItem('jwt', res.data.token);
 
-        this.props.history.push('/users');
+        this.props.history.push('/login');
       })
       .catch(error => console.error(error));
   };
