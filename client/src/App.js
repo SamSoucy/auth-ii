@@ -9,16 +9,16 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <>
-        <header>
+      <div>
+        <header className="nav">
           <nav>
-            <NavLink to="/register">Register</NavLink>
+            <NavLink className="nav" to="/register">Register</NavLink>
             &nbsp; |&nbsp;
-            <NavLink to="/login">Login</NavLink>
+            <NavLink className="nav" to="/login">Login</NavLink>
             &nbsp; |&nbsp;
-            <NavLink to="/users">Users</NavLink>
+            <NavLink className="nav" to="/users">Users</NavLink>
             &nbsp; |&nbsp;
-            <button onClick={this.logout}>Logout</button>
+            <button className= "navButton" onClick={this.logout}>Logout</button>
           </nav>
         </header>
         <main>
@@ -26,7 +26,7 @@ class App extends Component {
           <Route path='/login' component={Login} />
           <Route path="/users" component={Users} />
         </main>
-      </>
+      </div>
      
     );
   }

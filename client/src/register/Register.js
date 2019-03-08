@@ -13,10 +13,10 @@ render(){
     return (
         <>
             <h2>Register</h2>
-            <form onSubmit={this.handleSubmit}>
+            <form className="Form" onSubmit={this.handleSubmit}>
                 <div>
                     <lable htmlFor="username" />
-                    <input
+                    <input className="regInput"
                         name="username"
                         id="username"
                         value={this.state.username}
@@ -27,7 +27,7 @@ render(){
                 </div>
                 <div>
                     <label htmlFor="password" />
-                    <input
+                    <input className="regInput"
                         name="password"
                         id="password"
                         value={this.state.password}
@@ -38,7 +38,7 @@ render(){
                 </div>
                 <div>
                     <label htmlFor="department" />
-                    <input
+                    <input className="regInput"
                         name="department"
                         id="department"
                         value={this.state.department}
@@ -49,7 +49,7 @@ render(){
                 </div>
                     
                 <div>
-                    <button type="submit">Register</button>
+                    <button className= "button" type="submit">Register</button>
                 </div>
 
             </form>
@@ -73,7 +73,7 @@ handleInputChange = event => {
       .then(res => {
         localStorage.setItem('jwt', res.data.token);
 
-        this.props.history.push('/login');
+        this.props.history.push('/users');
       })
       .catch(error => console.error(error));
   };

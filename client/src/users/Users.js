@@ -13,9 +13,11 @@ class Users extends React.Component{
         return (
             <div>
                 <h2>Users list</h2>
+                <div className= "userList">
                 {this.state.users.map(user => (
                     <div key={user.id}>{user.username}</div>
                 ))}
+                </div>
             </div>
         )
     }
